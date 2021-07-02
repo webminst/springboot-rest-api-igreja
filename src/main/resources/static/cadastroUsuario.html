@@ -26,7 +26,7 @@ margin-top: 2%
 
 <div class="text-center">
   <img src="Logo IPB 1.png" class="rounded" alt="..." width=240 height=150>
-<h1 class="display-6">Cadastrar Usuários</h1>
+<h1 class="display-6">Cadastrar UsuÃ¡rios</h1>
 </div>
 
 	<form action="" id="formCadastroUsuario">
@@ -51,7 +51,7 @@ margin-top: 2%
 		<div class="mb-3">	
 			<label for="nome" class="form-label">Nome</label> 
 			<input type="text" class="form-control" id="nome"> 
-			<label class="form-check-label" for="valido">Usuário válido</label>			
+			<label class="form-check-label" for="valido">UsuÃ¡rio vÃ¡lido</label>			
 			<input type="checkbox" class="form-check-input" id="valido"> 
 		</div>
 
@@ -73,7 +73,7 @@ margin-top: 2%
 		</div>
 		
 		<div class="mb-3">	
-			<label for="observacao" class="form-label">Observações</label> 
+			<label for="observacao" class="form-label">ObservaÃ§Ãµes</label> 
 			<textarea class="form-control" id="observacao"></textarea> 
 		</div>
 		
@@ -109,17 +109,17 @@ function salvarUsuario(){
 	$.ajax({
 		method:"POST",
 		url: "salvar",
-		data: JASON.stringify({idUsuario : idUsuario, nome : nome,  
+		data: JSON.stringify({idUsuario : idUsuario, nome : nome,  
 			dataNascimento : dataNascimento, naturalidade : naturalidade, valido : valido, 
 			email : email, senha : senha,observacao : observacao}),
 		currentType: "application/JSON; charset = utf8",
 		success: function(response){
 			$("#idUsuario").val(response.id)
-			alert("Usuário salvo com sucesso!")
+			alert("UsuÃ¡rio salvo com sucesso!")
 		}
 		
 	}).fail(function(xhr, status, errorThrown) {
-		alert("Erro ao salvar usuário: " + xhr.responseText);
+		alert("Erro ao salvar usuÃ¡rio: " + xhr.responseText);
 	});
 }
 </script>
